@@ -582,12 +582,20 @@ video {
   }
 }
 
+.fixed {
+  position: fixed;
+}
+
 .absolute {
   position: absolute;
 }
 
 .relative {
   position: relative;
+}
+
+.bottom-4 {
+  bottom: 1rem;
 }
 
 .left-0 {
@@ -608,6 +616,14 @@ video {
 
 .z-10 {
   z-index: 10;
+}
+
+.z-50 {
+  z-index: 50;
+}
+
+.z-\[9999\] {
+  z-index: 9999;
 }
 
 .mx-5 {
@@ -693,6 +709,14 @@ video {
   display: none;
 }
 
+.h-14 {
+  height: 3.5rem;
+}
+
+.h-24 {
+  height: 6rem;
+}
+
 .h-36 {
   height: 9rem;
 }
@@ -703,6 +727,14 @@ video {
 
 .w-10 {
   width: 2.5rem;
+}
+
+.w-14 {
+  width: 3.5rem;
+}
+
+.w-24 {
+  width: 6rem;
 }
 
 .w-9 {
@@ -821,6 +853,11 @@ video {
 .bg-dark {
   --tw-bg-opacity: 1;
   background-color: rgb(15 23 42 / var(--tw-bg-opacity));
+}
+
+.bg-emerald-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(16 185 129 / var(--tw-bg-opacity));
 }
 
 .bg-primary {
@@ -1055,10 +1092,6 @@ video {
   transition-duration: 300ms;
 }
 
-.duration-700 {
-  transition-duration: 700ms;
-}
-
 .ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -1072,8 +1105,9 @@ body {
   z-index: 99;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   --tw-bg-opacity: 0.7;
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
+  --tw-backdrop-blur: blur(4px);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
   box-shadow: inset 0 -1px 0 0 rgba(0,0,0,0.1);
 }
 
@@ -1225,58 +1259,6 @@ body {
 .focus\:ring-primary:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(20 184 166 / var(--tw-ring-opacity));
-}
-
-.group:hover .group-hover\:fill-\[\#0175C2\] {
-  fill: #0175C2;
-}
-
-.group:hover .group-hover\:fill-\[\#02569B\] {
-  fill: #02569B;
-}
-
-.group:hover .group-hover\:fill-\[\#06B6D4\] {
-  fill: #06B6D4;
-}
-
-.group:hover .group-hover\:fill-\[\#0769AD\] {
-  fill: #0769AD;
-}
-
-.group:hover .group-hover\:fill-\[\#1572B6\] {
-  fill: #1572B6;
-}
-
-.group:hover .group-hover\:fill-\[\#181717\] {
-  fill: #181717;
-}
-
-.group:hover .group-hover\:fill-\[\#3776AB\] {
-  fill: #3776AB;
-}
-
-.group:hover .group-hover\:fill-\[\#4479A1\] {
-  fill: #4479A1;
-}
-
-.group:hover .group-hover\:fill-\[\#777BB4\] {
-  fill: #777BB4;
-}
-
-.group:hover .group-hover\:fill-\[\#7952B3\] {
-  fill: #7952B3;
-}
-
-.group:hover .group-hover\:fill-\[\#EF4223\] {
-  fill: #EF4223;
-}
-
-.group:hover .group-hover\:fill-\[\#F05032\] {
-  fill: #F05032;
-}
-
-.group:hover .group-hover\:fill-\[\#F7DF1E\] {
-  fill: #F7DF1E;
 }
 
 .group:hover .group-hover\:text-gray-300 {
