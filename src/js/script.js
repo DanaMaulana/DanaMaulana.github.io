@@ -8,6 +8,14 @@ hamburger.addEventListener('click', function() {
   navMenu.classList.toggle('hidden');
 });
 
+// close componen navbar menu of hamburger if on tap/click in other area
+window.addEventListener('click', function (e) {
+  if (e.target != navMenu && e.target != hamburger) {
+    hamburger.classList.remove('hamburger-active');
+    navMenu.classList.add('hidden');
+  }
+})
+
 // creating navbar fixed
 window.onscroll = function() {
   const header = document.querySelector('header');
@@ -29,10 +37,24 @@ window.onscroll = function() {
   }
 }
 
-// close componen navbar menu of hamburger if on tap/click in other area
-window.addEventListener('click', function (e) {
-  if (e.target != navMenu && e.target != hamburger) {
-    hamburger.classList.remove('hamburger-active');
-    navMenu.classList.add('hidden');
-  }
+// dark mode toggle
+const darkToggle = document.querySelector('#dark-toggle');
+const html = document.querySelector('html');
+
+darkToggle.addEventListener('click', function () {
+  if (darkToggle.checked) {
+    html.classList.add('dark');
+    // menambahkan local storage
+    localStorage.theme = 'dark';
+  } else {
+    html.classList.remove('dark');
+    // menambahkan local storage
+    localStorage.theme = 'light';
+  } 
 })
+// pindahkan posisi toggle sesuai mode
+if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  darkToggle.checked = true;
+} else {
+  darkToggle.checked = false;
+}
