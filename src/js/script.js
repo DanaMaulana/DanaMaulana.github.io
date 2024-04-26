@@ -58,3 +58,37 @@ if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.match
 } else {
   darkToggle.checked = false;
 }
+
+// Submit a Form to Google Sheets
+const scriptURL = 'https://script.google.com/macros/s/AKfycbzKr___kPwHS-NPib5zogd3hYCrvrCF8H6JF1I-0NjVWAMQUM1Hb5EcCSaWJaHM4vub/exec';
+const form = document.forms['submit-to-google-sheet'];
+const btnKirim = document.querySelector('.btn-kirim');
+const btnLoading = document.querySelector('.btn-loading');
+const alertBox = document.querySelector('#alertBox');
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  // ketika tombol diklik
+  // tampilkan tombol loading, hilangkan tombol kirim
+  btnKirim.classList.toggle('hidden');
+  btnLoading.classList.toggle('hidden');
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+  .then(response => {
+    // tampilkan tombol kirim, hilangkan tombol loading
+      btnKirim.classList.toggle('hidden');
+      btnLoading.classList.toggle('hidden');
+      // tampilkan alert
+      alertBox.classList.remove('hidden');
+      alertBox.classList.add('flex');
+      // reset form setelah kirim pesan
+      form.reset();
+      console.log('Success!', response)
+    })
+    .catch(error => console.error('Error!', error.message))
+})
+
+// Function to close the alert box
+function closeAlert() {
+  var alertBox = document.getElementById("alertBox");
+  alertBox.style.display = "none";
+}
