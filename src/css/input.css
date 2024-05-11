@@ -37,11 +37,11 @@ body {
 }
 
 .button-style {
-  @apply hover:border-white hover:text-white py-1 px-2 rounded-md;
+  @apply border hover:border-white hover:text-white py-1 px-2 rounded-md font-semibold text-lg transition duration-300 cursor-default;
 }
 
 .light-satu {
-  @apply dark:text-slate-200;
+  @apply dark:text-slate-200 justify-center;
 }
 
 .light-dua {
