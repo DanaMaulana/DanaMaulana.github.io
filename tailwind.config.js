@@ -7,6 +7,10 @@ module.exports = {
       center: true,
       padding: '16px',
     },
+    fontFamily: {
+      'Montserrat': ['Montserrat', 'sans-serif'],
+      'RobotoMono': ['Roboto Mono', 'monospace'],
+    },
     extend: {
       colors: {
         'primary': '#14b8a6',
