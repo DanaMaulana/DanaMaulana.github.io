@@ -40,12 +40,12 @@
           <!-- navbar -->
           <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none dark:bg-dark dark:shadow-slate-500 lg:dark:bg-transparent">
             <ul class="block lg:flex">
-              <li class=""><a href="#home" class="text-base text-dark py-2 mx-8 flex hover:text-primary dark:text-white">Beranda</a></li>
-              <li class=""><a href="#about" class="text-base text-dark py-2 mx-8 flex hover:text-primary dark:text-white">Tentang Saya</a></li>
-              <li class=""><a href="#portfolio" class="text-base text-dark py-2 mx-8 flex hover:text-primary dark:text-white">Portofolio</a></li>
-              <li class=""><a href="#skills" class="text-base text-dark py-2 mx-8 flex hover:text-primary dark:text-white">Keahlian</a></li>
+              <li class=""><a href="#home" class="text-base text-dark py-2 mx-8 flex hover:text-primary dark:text-white">Home</a></li>
+              <li class=""><a href="#about" class="text-base text-dark py-2 mx-8 flex hover:text-primary dark:text-white">About Me</a></li>
+              <li class=""><a href="#portfolio" class="text-base text-dark py-2 mx-8 flex hover:text-primary dark:text-white">Portfolio</a></li>
+              <li class=""><a href="#skills" class="text-base text-dark py-2 mx-8 flex hover:text-primary dark:text-white">Skills</a></li>
               <li class=""><a href="#blog" class="text-base text-dark py-2 mx-8 flex hover:text-primary dark:text-white">Blog</a></li>
-              <li class=""><a href="#contact" class="text-base text-dark py-2 mx-8 flex hover:text-primary dark:text-white">Kontak</a></li>
+              <li class=""><a href="#contact" class="text-base text-dark py-2 mx-8 flex hover:text-primary dark:text-white">Contact</a></li>
               <li class="flex items-center pl-8 mt-3 md:mt-0">
                 <div class="flex">
                   <span class="mr-2 text-sm text-slate-500 dark:text-white">Light</span>
@@ -94,7 +94,7 @@
       <div class="container">
         <div class="flex flex-wrap">
           <div class="w-full px-4 mb-10 lg:w-1/2">
-            <h2 class="font-bold uppercase text-primary text-lg mb-3">Tentang Saya</h2>
+            <h2 class="font-bold uppercase text-primary text-lg mb-3">About Me</h2>
             <h3 class="font-bold text-dark text-3xl mb-5 lg:text-4xl light-satu">Coding</h3>
             <p class="font-medium text-base text-secondary lg:text-lg light-dua">Pertama kali saya mengenal dunia programming waktu itu masih SMK kelas 11, bahasa yang pertama kali saya pelajari pada saat itu adalah HTML. Coding mengajarkan saya untuk melatih cara berpikir, ketelitian, critical thinking, serta kesabaran.</p>
           </div>
@@ -112,13 +112,78 @@
       <div class="container">
         <div class="w-full px-4">
           <div class="max-w-xl mx-auto text-center mb-16">
-            <h2 class="font-semibold text-lg text-primary uppercase mb-2 sm:text-2xl lg:text-3xl">Portofolio</h2>
-            <h3 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl capitalize light-satu">Project terbaru</h3>
+            <h2 class="font-semibold text-3xl text-primary uppercase mb-2 sm:text-4xl lg:text-5xl">Portfolio</h2>
+            <h3 class="font-bold text-dark text-lg mb-4 sm:text-2xl lg:text-3xl capitalize light-satu">Project terbaru</h3>
             <p class="font-medium text-base text-secondary md:text-lg light-dua">Projek terbaru akan ditampilan di bagian ini</p>
           </div>
         </div>
 
         <div class="w-full px-4 flex flex-wrap xl:w-10/12 xl:mx-auto">
+          <div class="mb-12 p-4 md:w-1/3 ">
+            <div class="rounded-md shadow-md overflow-hidden group">
+              <div class="hovereffect relative group">
+                  <img src="src/img/portfolio/midnight-movie.png" alt="midnight-movie" class="block relative scale-110 transition-all duration-500 ease-in-out group-hover:scale-100">
+                  <div class="overlay absolute top-0 left-0 w-full h-full overflow-hidden transition-all duration-500 ease-in-out group-hover:bg-[#aaaaaa]/40">
+                    <a class="info flex justify-center items-center text-white opacity-0 scale-150 transition-all duration-500 ease-in-out h-full w-full top-0 left-0 group-hover:opacity-100 group-hover:scale-100 group-hover:bg-[#000000]/40" href="https://danamaulana.github.io/movie-midnight/" target="_blank">VISIT PAGE</a>
+                  </div>
+              </div>
+            </div>
+            <a href="https://danamaulana.github.io/movie-midnight/" target="_blank">
+              <h4 class="font-medium text-xl text-dark mt-2 mb-3 light-satu inline-block">Midnight Movie</h4>
+            </a>
+            <div class="compatible">
+              <p class="light-satu">Responsive</p>
+              <div class="icon-device mt-3">
+                <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-desktop fa-lg"></i></span>
+                <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-laptop fa-lg"></i></span>
+                <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-tablet fa-lg"></i></span>
+                <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-mobile-screen-button fa-lg"></i></span>
+              </div>
+            </div>
+            <div class="stack-tech mt-5">
+              <p class="light-satu">Stack Tech</p>
+              <div class="flex flex-wrap gap-1 mt-3">
+                <span class="bg-white p-2 rounded-[4px] font-semibold">ReactJS</span>
+                <span class="bg-white p-2 rounded-[4px] font-semibold">JavaScript</span>
+                <span class="bg-white p-2 rounded-[4px] font-semibold">HTML</span>
+                <span class="bg-white p-2 rounded-[4px] font-semibold">Sass</span>
+                <span class="bg-white p-2 rounded-[4px] font-semibold">Bootstrap</span>
+              </div>
+            </div>
+          </div>
+          <div class="mb-12 p-4 md:w-1/3 ">
+            <div class="rounded-md shadow-md overflow-hidden group">
+              <div class="hovereffect relative group">
+                  <img src="src/img/portfolio/find-movie.png" alt="find-movie" class="block relative scale-110 transition-all duration-500 ease-in-out group-hover:scale-100">
+                  <div class="overlay absolute top-0 left-0 w-full h-full overflow-hidden transition-all duration-500 ease-in-out group-hover:bg-[#aaaaaa]/40">
+                    <a class="info flex justify-center items-center text-white opacity-0 scale-150 transition-all duration-500 ease-in-out h-full w-full top-0 left-0 group-hover:opacity-100 group-hover:scale-100 group-hover:bg-[#000000]/40" href="https://danamaulana.github.io/movie-home/" target="_blank">VISIT PAGE</a>
+                  </div>
+              </div>
+            </div>
+            <a href="https://danamaulana.github.io/movie-home/" target="_blank">
+              <h4 class="font-medium text-xl text-dark mt-2 mb-3 light-satu inline-block">Find Movies</h4>
+            </a>
+            <div class="compatible">
+              <p class="light-satu">Responsive</p>
+              <div class="icon-device mt-3">
+                <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-desktop fa-lg"></i></span>
+                <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-laptop fa-lg"></i></span>
+                <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-tablet fa-lg"></i></span>
+                <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-mobile-screen-button fa-lg"></i></span>
+              </div>
+            </div>
+            <div class="stack-tech mt-5">
+              <p class="light-satu">Stack Tech</p>
+              <div class="flex flex-wrap gap-1 mt-3">
+                <span class="bg-white p-2 rounded-[4px] font-semibold">HTML</span>
+                <span class="bg-white p-2 rounded-[4px] font-semibold">CSS</span>
+                <span class="bg-white p-2 rounded-[4px] font-semibold">Bootstrap</span>
+                <span class="bg-white p-2 rounded-[4px] font-semibold">JavaScript</span>
+                <span class="bg-white p-2 rounded-[4px] font-semibold">jQuery</span>
+                <span class="bg-white p-2 rounded-[4px] font-semibold">API</span>
+              </div>
+            </div>
+          </div>
           <div class="mb-12 p-4 md:w-1/3 ">
             <div class="rounded-md shadow-md overflow-hidden group">
               <div class="hovereffect relative group">
@@ -132,12 +197,21 @@
               <h4 class="font-medium text-xl text-dark mt-2 mb-3 light-satu inline-block">Wedding Website</h4>
             </a>
             <div class="compatible">
-              <p class="light-satu">Responsive<i class="fa-regular fa-circle-check text-[#2c2c2c] dark:text-[#63E6BE] ml-1"></i></p>
+              <p class="light-satu">Responsive</p>
               <div class="icon-device mt-3">
                 <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-desktop fa-lg"></i></span>
                 <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-laptop fa-lg"></i></span>
                 <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-tablet fa-lg"></i></span>
                 <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-mobile-screen-button fa-lg"></i></span>
+              </div>
+            </div>
+            <div class="stack-tech mt-5">
+              <p class="light-satu">Stack Tech</p>
+              <div class="flex flex-wrap gap-1 mt-3">
+                <span class="bg-white p-2 rounded-[4px] font-semibold">HTML</span>
+                <span class="bg-white p-2 rounded-[4px] font-semibold">CSS</span>
+                <span class="bg-white p-2 rounded-[4px] font-semibold">JavaScript</span>
+                <span class="bg-white p-2 rounded-[4px] font-semibold">Bootstrap</span>
               </div>
             </div>
           </div>
@@ -154,12 +228,21 @@
               <h4 class="font-medium text-xl text-dark mt-2 mb-3 light-satu inline-block">Business Online</h4>
             </a>
             <div class="compatible">
-              <p class="light-satu">Responsive<i class="fa-regular fa-circle-check text-[#2c2c2c] dark:text-[#63E6BE] ml-1"></i></p>
+              <p class="light-satu">Responsive</p>
               <div class="icon-device mt-3">
                 <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-desktop fa-lg"></i></span>
                 <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-laptop fa-lg"></i></span>
                 <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-tablet fa-lg"></i></span>
                 <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-mobile-screen-button fa-lg"></i></span>
+              </div>
+            </div>
+            <div class="stack-tech mt-5">
+              <p class="light-satu">Stack Tech</p>
+              <div class="flex flex-wrap gap-1 mt-3">
+                <span class="bg-white p-2 rounded-[4px] font-semibold">HTML</span>
+                <span class="bg-white p-2 rounded-[4px] font-semibold">CSS</span>
+                <span class="bg-white p-2 rounded-[4px] font-semibold">JavaScript</span>
+                <span class="bg-white p-2 rounded-[4px] font-semibold">Tailwind</span>
               </div>
             </div>
           </div>
@@ -176,12 +259,21 @@
               <h4 class="font-medium text-xl text-dark mt-2 mb-3 light-satu inline-block">Future Property</h4>
             </a>
             <div class="compatible">
-              <p class="light-satu">Responsive<i class="fa-regular fa-circle-check text-[#2c2c2c] dark:text-[#63E6BE] ml-1"></i></p>
+              <p class="light-satu">Responsive</p>
               <div class="icon-device mt-3">
                 <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-desktop fa-lg"></i></span>
                 <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-laptop fa-lg"></i></span>
                 <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-tablet fa-lg"></i></span>
                 <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-mobile-screen-button fa-lg"></i></span>
+              </div>
+            </div>
+            <div class="stack-tech mt-5">
+              <p class="light-satu">Stack Tech</p>
+              <div class="flex flex-wrap gap-1 mt-3">
+                <span class="bg-white p-2 rounded-[4px] font-semibold">HTML</span>
+                <span class="bg-white p-2 rounded-[4px] font-semibold">CSS</span>
+                <span class="bg-white p-2 rounded-[4px] font-semibold">JavaScript</span>
+                <span class="bg-white p-2 rounded-[4px] font-semibold">Tailwind</span>
               </div>
             </div>
           </div>
@@ -198,7 +290,7 @@
               <h4 class="font-medium text-xl text-dark mt-2 mb-3 light-satu inline-block">Showcase NFT</h4>
             </a>
             <div class="compatible">
-              <p class="light-satu">Responsive<i class="fa-regular fa-circle-check text-[#2c2c2c] dark:text-[#63E6BE] ml-1"></i></p>
+              <p class="light-satu">Responsive</p>
               <div class="icon-device mt-3">
                 <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-desktop fa-lg"></i></span>
                 <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-laptop fa-lg"></i></span>
@@ -206,48 +298,13 @@
                 <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-mobile-screen-button fa-lg"></i></span>
               </div>
             </div>
-          </div>
-          <div class="mb-12 p-4 md:w-1/3">
-            <div class="rounded-md shadow-md overflow-hidden group">
-              <div class="relative group">
-                  <img src="src/img/portfolio/compette.png" alt="first-wedding" class="block relative scale-110 transition-all duration-500 ease-in-out group-hover:scale-100">
-                  <div class="absolute top-0 left-0 w-full h-full overflow-hidden transition-all duration-500 ease-in-out group-hover:bg-[#aaaaaa]/40">
-                    <a class="flex justify-center items-center text-white opacity-0 scale-150 transition-all duration-500 ease-in-out h-full w-full top-0 left-0 group-hover:opacity-100 group-hover:scale-100 group-hover:bg-[#000000]/40" href="https://danamaulana.github.io/compette/" target="_blank">VISIT PAGE</a>
-                  </div>
-              </div>
-            </div>
-            <a href="https://danamaulana.github.io/compette/" target="_blank">
-              <h4 class="font-medium text-xl text-dark mt-2 mb-3 light-satu inline-block">Compette</h4>
-            </a>
-            <div class="compatible">
-              <p class="light-satu">Responsive<i class="fa-regular fa-circle-check text-[#2c2c2c] dark:text-[#63E6BE] ml-1"></i></p>
-              <div class="icon-device mt-3">
-                <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-desktop fa-lg"></i></span>
-                <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-laptop fa-lg"></i></span>
-                <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-tablet fa-lg"></i></span>
-                <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-mobile-screen-button fa-lg"></i></span>
-              </div>
-            </div>
-          </div>
-          <div class="mb-12 p-4 md:w-1/3">
-            <div class="rounded-md shadow-md overflow-hidden group">
-              <div class="relative group">
-                  <img src="src/img/portfolio/paynaFinance.png" alt="first-wedding" class="block relative scale-110 transition-all duration-500 ease-in-out group-hover:scale-100">
-                  <div class="absolute top-0 left-0 w-full h-full overflow-hidden transition-all duration-500 ease-in-out group-hover:bg-[#aaaaaa]/40">
-                    <a class="flex justify-center items-center text-white opacity-0 scale-150 transition-all duration-500 ease-in-out h-full w-full top-0 left-0 group-hover:opacity-100 group-hover:scale-100 group-hover:bg-[#000000]/40" href="https://danamaulana.github.io/payna_finance/" target="_blank">VISIT PAGE</a>
-                  </div>
-              </div>
-            </div>
-            <a href="https://danamaulana.github.io/payna_finance/" target="_blank">
-              <h4 class="font-medium text-xl text-dark mt-2 mb-3 light-satu inline-block">Payna Finance</h4>
-            </a>
-            <div class="compatible">
-              <p class="light-satu">Responsive<i class="fa-regular fa-circle-check text-[#2c2c2c] dark:text-[#63E6BE] ml-1"></i></p>
-              <div class="icon-device mt-3">
-                <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-desktop fa-lg"></i></span>
-                <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-laptop fa-lg"></i></span>
-                <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-tablet fa-lg"></i></span>
-                <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-mobile-screen-button fa-lg"></i></span>
+            <div class="stack-tech mt-5">
+              <p class="light-satu">Stack Tech</p>
+              <div class="flex flex-wrap gap-1 mt-3">
+                <span class="bg-white p-2 rounded-[4px] font-semibold">HTML</span>
+                <span class="bg-white p-2 rounded-[4px] font-semibold">CSS</span>
+                <span class="bg-white p-2 rounded-[4px] font-semibold">JavaScript</span>
+                <span class="bg-white p-2 rounded-[4px] font-semibold">Tailwind</span>
               </div>
             </div>
           </div>
@@ -263,12 +320,12 @@
     <section id="skills" class="pt-36 pb-32 bg-slate-700 dark:bg-slate-200">
       <div class="container">
         <div class="w-full px-4">
-          <div class="mx-auto text-center mb-16">
-            <h2 class="font-semibold text-lg text-primary uppercase mb-2 sm:text-2xl lg:text-3xl">Skills</h2>
-            <h3 class="font-bold text-slate-200 text-3xl mb-4 capitalize sm:text-4xl lg:text-5xl dark:text-dark">Hard skills</h3>
+          <div class="mx-auto mb-10">
+            <h2 class="font-semibold text-3xl text-primary uppercase mb-2 sm:text-4xl lg:text-5xl text-center">Skills</h2>
           </div>
         </div>
-
+        
+        <h3 class="font-bold text-slate-200 text-lg mb-5 capitalize sm:text-2xl lg:text-3xl dark:text-dark">Hard skills</h3>
         <div class="w-full px-4 font-RobotoMono">
           <div class="flex flex-col justify-start items-center gap-y-5 dark:text-dark text-white">
             <!-- front-end web -->
@@ -334,6 +391,21 @@
             </div>
           </div>
         </div>
+        <h3 class="font-bold text-slate-200 text-lg mb-5 capitalize sm:text-2xl lg:text-3xl dark:text-dark mt-14">Soft skills</h3>
+        <div class="w-full px-4 font-RobotoMono">
+          <div class="flex flex-col justify-start items-center gap-y-5 dark:text-dark text-white">
+            <!-- front-end web -->
+            <div class="w-full flex flex-col justify-start gap-y-3">
+              <div class="body ml-3 flex flex-col gap-3">
+                <span class="list-soft-skills block">> Logical Thinking</span>
+                <span class="list-soft-skills block">> Analytical Thinking</span>
+                <span class="list-soft-skills block">> Problem-Solving</span>
+                <span class="list-soft-skills block">> Attention to Detail</span>
+                <span class="list-soft-skills block">> Critical Thinking</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <!-- skills section end -->
@@ -343,8 +415,7 @@
       <div class="container">
         <div class="w-full px-4">
           <div class="max-w-xl mx-auto text-center mb-16">
-            <h2 class="font-semibold text-lg text-primary uppercase mb-2 sm:text-2xl lg:text-3xl">blog</h2>
-            <h3 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl capitalize light-satu">berita terkini</h3>
+            <h2 class="font-semibold text-3xl text-primary uppercase mb-2 sm:text-4xl lg:text-5xl">blog</h2>
             <p class="font-medium text-base text-secondary md:text-lg light-dua">Blog terbaru akan ditampilkan di bagian terdepan di bagian ini</p>
           </div>
         </div>
@@ -390,8 +461,7 @@
       <div class="container">
         <div class="w-full px-4">
           <div class="max-w-2xl mx-auto text-center mb-16">
-            <h2 class="font-semibold text-lg text-primary uppercase mb-2 sm:text-2xl lg:text-3xl">contact</h2>
-            <h3 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl capitalize light-satu">hubungi kami</h3>
+            <h2 class="font-semibold text-3xl text-primary uppercase mb-2 sm:text-4xl lg:text-5xl">contact</h2>
             <p class="font-medium text-base text-secondary md:text-lg light-dua">Anda bisa menghubungi saya melalui tautan sosial media yang tertera di bagian paling bawah dari halaman ini, atau bisa juga melalui email di kolom berikut.</p>
           </div>
         </div>
@@ -444,7 +514,7 @@
           </div>
         </div>
         <div class="w-full px-4 mb-12 md:w-1/3">
-          <h4 class="font-semibold text-xl text-white mb-5 capitalize dark:text-dark">kategori tulisan</h4>
+          <h4 class="font-semibold text-xl text-white mb-5 capitalize dark:text-dark">article category</h4>
           <ul class="text-slate-300">
             <p class="text-base text-secondary">Belum ada tautan apapun</p>
             <!-- <li><a href="#" class="inline-block text-base hover:text-primary mb-3 dark:text-slate-700">programming</a></li>
@@ -453,12 +523,12 @@
           </ul>
         </div>
         <div class="w-full px-4 mb-12 md:w-1/3">
-          <h4 class="font-semibold text-xl text-white mb-5 capitalize dark:text-dark">tautan</h4>
+          <h4 class="font-semibold text-xl text-white mb-5 capitalize dark:text-dark">link</h4>
           <ul class="text-slate-300">
-            <li><a href="#home" class="inline-block text-base hover:text-primary mb-3 dark:text-slate-700 dark:hover:text-primary">beranda</a></li>
-            <li><a href="#about" class="inline-block text-base hover:text-primary mb-3 dark:text-slate-700 dark:hover:text-primary">tentang saya</a></li>
-            <li><a href="#portfolio" class="inline-block text-base hover:text-primary mb-3 dark:text-slate-700 dark:hover:text-primary">portofolio</a></li>
-            <li><a href="#skills" class="inline-block text-base hover:text-primary mb-3 dark:text-slate-700 dark:hover:text-primary">keahlian</a></li>
+            <li><a href="#home" class="inline-block text-base hover:text-primary mb-3 dark:text-slate-700 dark:hover:text-primary">home page</a></li>
+            <li><a href="#about" class="inline-block text-base hover:text-primary mb-3 dark:text-slate-700 dark:hover:text-primary">about me</a></li>
+            <li><a href="#portfolio" class="inline-block text-base hover:text-primary mb-3 dark:text-slate-700 dark:hover:text-primary">portfolio</a></li>
+            <li><a href="#skills" class="inline-block text-base hover:text-primary mb-3 dark:text-slate-700 dark:hover:text-primary">skills</a></li>
             <li><a href="#blog" class="inline-block text-base hover:text-primary mb-3 dark:text-slate-700 dark:hover:text-primary">blog</a></li>
             <li><a href="#contact" class="inline-block text-base hover:text-primary mb-3 dark:text-slate-700 dark:hover:text-primary">contact</a></li>
           </ul>
