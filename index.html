@@ -1,426 +1,888 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="scroll-smooth">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="src/css/style.css">
-  <!-- font awesome -->
-  <script src="https://kit.fontawesome.com/0cc563fb18.js" crossorigin="anonymous"></script>
-  <!-- google font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-  <!-- local storage untuk mode dark -->
-  <script>
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  </script>
-  <title>Dana Maulana | Personal home page</title>
-</head>
-<body class="bg-[#F1F4F5]">
-  <!-- header start -->
-  <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
-    <div class="container">
-      <div class="flex items-center justify-between relative">
-        <div class="px-4">
-          <a href="#home" class="py-6 block">
-            <img src="src/img/icon/logo.png" class="w-10" alt="logo">
-          </a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/css/final.css" />
+    <!-- font awesome -->
+    <script
+      src="https://kit.fontawesome.com/0cc563fb18.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- local storage untuk mode dark -->
+    <script>
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+    <title>Dana Maulana | Personal home page</title>
+  </head>
+  <body class="bg-[#F1F4F5]">
+    <!-- header start -->
+    <header
+      class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10"
+    >
+      <div class="container">
+        <div class="flex items-center justify-between relative">
+          <div class="px-4">
+            <a href="#home" class="py-6 block">
+              <img src="src/img/icon/logo.png" class="w-10" alt="logo" />
+            </a>
+          </div>
+          <!-- menu hamburger -->
+          <div class="flex items-center px-4">
+            <button
+              id="hamburger"
+              name="hamburger"
+              type="button"
+              class="block absolute right-4 lg:hidden"
+            >
+              <span class="hamburger-line td300 origin-top-left"></span>
+              <span class="hamburger-line td300"></span>
+              <span class="hamburger-line td300 origin-bottom-left"></span>
+            </button>
+            <!-- navbar -->
+            <nav
+              id="nav-menu"
+              class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none dark:bg-dark dark:shadow-slate-500 lg:dark:bg-transparent"
+            >
+              <ul class="block lg:flex">
+                <li class="">
+                  <a
+                    href="#home"
+                    class="text-base text-dark py-2 mx-8 flex hover:text-primary dark:text-white"
+                    >Home</a
+                  >
+                </li>
+                <li class="">
+                  <a
+                    href="#about"
+                    class="text-base text-dark py-2 mx-8 flex hover:text-primary dark:text-white"
+                    >About Me</a
+                  >
+                </li>
+                <li class="">
+                  <a
+                    href="#portfolio"
+                    class="text-base text-dark py-2 mx-8 flex hover:text-primary dark:text-white"
+                    >Portfolio</a
+                  >
+                </li>
+                <li class="">
+                  <a
+                    href="#skills"
+                    class="text-base text-dark py-2 mx-8 flex hover:text-primary dark:text-white"
+                    >Skills</a
+                  >
+                </li>
+                <li class="">
+                  <a
+                    href="#blog"
+                    class="text-base text-dark py-2 mx-8 flex hover:text-primary dark:text-white"
+                    >Blog</a
+                  >
+                </li>
+                <li class="">
+                  <a
+                    href="#contact"
+                    class="text-base text-dark py-2 mx-8 flex hover:text-primary dark:text-white"
+                    >Contact</a
+                  >
+                </li>
+                <li class="flex items-center pl-8 mt-3 md:mt-0">
+                  <div class="flex">
+                    <span class="mr-2 text-sm text-slate-500 dark:text-white"
+                      >Light</span
+                    >
+                    <input type="checkbox" class="hidden" id="dark-toggle" />
+                    <label for="dark-toggle">
+                      <div
+                        class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 dark:bg-slate-50 p-1"
+                      >
+                        <div
+                          class="toggle-circle h-4 w-4 rounded-full bg-white dark:bg-dark transition duration-300 ease-in-out"
+                        ></div>
+                      </div>
+                    </label>
+                    <span class="ml-2 text-sm text-slate-500 dark:text-white"
+                      >Dark</span
+                    >
+                  </div>
+                </li>
+              </ul>
+            </nav>
+          </div>
         </div>
-        <!-- menu hamburger -->
-        <div class="flex items-center px-4">
-          <button id="hamburger" name="hamburger" type="button" class="block absolute right-4 lg:hidden">
-            <span class="hamburger-line td300 origin-top-left"></span>
-            <span class="hamburger-line td300"></span>
-            <span class="hamburger-line td300 origin-bottom-left"></span>
-          </button>
-          <!-- navbar -->
-          <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none dark:bg-dark dark:shadow-slate-500 lg:dark:bg-transparent">
-            <ul class="block lg:flex">
-              <li class=""><a href="#home" class="text-base text-dark py-2 mx-8 flex hover:text-primary dark:text-white">Home</a></li>
-              <li class=""><a href="#about" class="text-base text-dark py-2 mx-8 flex hover:text-primary dark:text-white">About Me</a></li>
-              <li class=""><a href="#portfolio" class="text-base text-dark py-2 mx-8 flex hover:text-primary dark:text-white">Portfolio</a></li>
-              <li class=""><a href="#skills" class="text-base text-dark py-2 mx-8 flex hover:text-primary dark:text-white">Skills</a></li>
-              <li class=""><a href="#blog" class="text-base text-dark py-2 mx-8 flex hover:text-primary dark:text-white">Blog</a></li>
-              <li class=""><a href="#contact" class="text-base text-dark py-2 mx-8 flex hover:text-primary dark:text-white">Contact</a></li>
-              <li class="flex items-center pl-8 mt-3 md:mt-0">
-                <div class="flex">
-                  <span class="mr-2 text-sm text-slate-500 dark:text-white">Light</span>
-                  <input type="checkbox" class="hidden" id="dark-toggle">
-                  <label for="dark-toggle">
-                    <div class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 dark:bg-slate-50 p-1">
-                      <div class="toggle-circle h-4 w-4 rounded-full bg-white dark:bg-dark transition duration-300 ease-in-out"></div>
-                    </div>
-                  </label>
-                  <span class="ml-2 text-sm text-slate-500 dark:text-white">Dark</span>
+      </div>
+    </header>
+    <!-- header end -->
+
+    <!-- main start -->
+    <main>
+      <!-- hero sertion start -->
+      <section id="home" class="pt-36 dark:bg-dark">
+        <div class="container">
+          <div class="flex flex-wrap">
+            <div class="w-full self-center px-4 lg:w-1/2">
+              <h1 class="text-base font-semibold text-primary md:text-xl">
+                Halo Semua 👋, saya
+                <span
+                  class="block font-bold text-dark text-4xl mt-1 lg:text-5xl light-satu"
+                  >Dana Maulana</span
+                >
+              </h1>
+              <h2 class="font-medium text-secondary text-lg mb-5 light-dua">
+                Web & Mobile developer
+              </h2>
+              <p
+                class="font-medium text-secondary mb-10 leading-relaxed light-dua"
+              >
+                Membangun sebuah aplikasi web dan mobile adalah jalan ninjaku!
+              </p>
+
+              <a
+                href="#contact"
+                class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out"
+                >Hubungi Saya</a
+              >
+            </div>
+            <div class="w-full self-end px-4 lg:w-1/2">
+              <div class="mt-10 lg:mt-9 lg:right-0">
+                <img
+                  src="src/img/human/alan.png"
+                  alt="Dana Maulana"
+                  class="max-w-full mx-auto w-96"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- hero section end -->
+
+      <!-- about section start -->
+      <section id="about" class="pt-36 pb-32 dark:bg-dark">
+        <div class="container">
+          <div class="flex flex-wrap">
+            <div class="w-full px-4 mb-10 lg:w-1/2">
+              <h2 class="font-bold uppercase text-primary text-lg mb-3">
+                About Me
+              </h2>
+              <h3
+                class="font-bold text-dark text-3xl mb-5 lg:text-4xl light-satu"
+              >
+                Coding
+              </h3>
+              <p
+                class="font-medium text-base text-secondary lg:text-lg light-dua"
+              >
+                Pertama kali saya mengenal dunia programming waktu itu masih SMK
+                kelas 11, bahasa yang pertama kali saya pelajari pada saat itu
+                adalah HTML. Coding mengajarkan saya untuk melatih cara
+                berpikir, ketelitian, critical thinking, serta kesabaran.
+              </p>
+            </div>
+            <div class="w-full px-4 lg:w-1/2">
+              <h3
+                class="font-bold text-dark text-3xl mb-5 lg:text-4xl lg:pt-10 light-satu"
+              >
+                Hobi
+              </h3>
+              <p
+                class="font-medium text-base text-secondary mb-6 lg:text-lg light-dua"
+              >
+                Selain ngoding saya juga hobi berolahraga. Futsal, badminton,
+                basket adalah cabang olahraga yang saya suka. Bermain video game
+                juga menjadi salah satu hobi saya. Action, Adventure, fps adalah
+                genre video game yang sering saya mainkan.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- about section end -->
+
+      <!-- portfolio section start-->
+      <section
+        id="portfolio"
+        class="pt-36 pb-16 bg-slate-200 dark:bg-slate-800"
+      >
+        <div class="container">
+          <div class="w-full px-4">
+            <div class="max-w-xl mx-auto text-center mb-16">
+              <h2
+                class="font-semibold text-3xl text-primary uppercase mb-2 sm:text-4xl lg:text-5xl"
+              >
+                Portfolio
+              </h2>
+              <h3
+                class="font-bold text-dark text-lg mb-4 sm:text-2xl lg:text-3xl capitalize light-satu"
+              >
+                Project terbaru
+              </h3>
+              <p
+                class="font-medium text-base text-secondary md:text-lg light-dua"
+              >
+                Projek terbaru akan ditampilan di bagian ini
+              </p>
+            </div>
+          </div>
+
+          <div class="w-full px-4 flex flex-wrap xl:w-10/12 xl:mx-auto">
+            <div class="mb-12 p-4 md:w-1/3">
+              <div class="rounded-md shadow-md overflow-hidden group">
+                <div class="hovereffect relative group">
+                  <img
+                    src="src/img/portfolio/midnight-movie.png"
+                    alt="midnight-movie"
+                    class="block relative scale-110 transition-all duration-500 ease-in-out group-hover:scale-100"
+                  />
+                  <div
+                    class="overlay absolute top-0 left-0 w-full h-full overflow-hidden transition-all duration-500 ease-in-out group-hover:bg-[#aaaaaa]/40"
+                  >
+                    <a
+                      class="info flex justify-center items-center text-white opacity-0 scale-150 transition-all duration-500 ease-in-out h-full w-full top-0 left-0 group-hover:opacity-100 group-hover:scale-100 group-hover:bg-[#000000]/40"
+                      href="https://danamaulana.github.io/movie-midnight/"
+                      target="_blank"
+                      >VISIT PAGE</a
+                    >
+                  </div>
                 </div>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </header>
-  <!-- header end -->
-
-  <!-- main start -->
-  <main>
-    <!-- hero sertion start -->
-    <section id="home" class="pt-36 dark:bg-dark">
-      <div class="container">
-        <div class="flex flex-wrap">
-          <div class="w-full self-center px-4 lg:w-1/2">
-            <h1 class="text-base font-semibold text-primary md:text-xl">Halo Semua 👋, saya <span class="block font-bold text-dark text-4xl mt-1 lg:text-5xl light-satu">Dana Maulana</span></h1>
-            <h2 class="font-medium text-secondary text-lg mb-5 light-dua">Web & Mobile developer</h2>
-            <p class="font-medium text-secondary mb-10 leading-relaxed light-dua">Membangun sebuah aplikasi web dan mobile adalah jalan ninjaku!</p>
-
-            <a href="#contact" class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out">Hubungi Saya</a>
-          </div>
-          <div class="w-full self-end px-4 lg:w-1/2">
-            <div class="mt-10 lg:mt-9 lg:right-0">
-              <img src="src/img/human/alan.png" alt="Dana Maulana" class="max-w-full mx-auto w-96"/>
+              </div>
+              <a
+                href="https://danamaulana.github.io/movie-midnight/"
+                target="_blank"
+              >
+                <h4
+                  class="font-medium text-xl text-dark mt-2 mb-3 light-satu inline-block"
+                >
+                  Midnight Movie
+                </h4>
+              </a>
+              <div class="compatible">
+                <p class="light-satu">Responsive</p>
+                <div class="icon-device mt-3">
+                  <span class="bg-white p-2 rounded-[4px]"
+                    ><i class="fa-solid fa-desktop fa-lg"></i
+                  ></span>
+                  <span class="bg-white p-2 rounded-[4px]"
+                    ><i class="fa-solid fa-laptop fa-lg"></i
+                  ></span>
+                  <span class="bg-white p-2 rounded-[4px]"
+                    ><i class="fa-solid fa-tablet fa-lg"></i
+                  ></span>
+                  <span class="bg-white p-2 rounded-[4px]"
+                    ><i class="fa-solid fa-mobile-screen-button fa-lg"></i
+                  ></span>
+                </div>
+              </div>
+              <div class="stack-tech mt-5">
+                <p class="light-satu">Stack Tech</p>
+                <div class="flex flex-wrap gap-1 mt-3">
+                  <span class="bg-white p-2 rounded-[4px] font-semibold"
+                    >ReactJS</span
+                  >
+                  <span class="bg-white p-2 rounded-[4px] font-semibold"
+                    >JavaScript</span
+                  >
+                  <span class="bg-white p-2 rounded-[4px] font-semibold"
+                    >HTML</span
+                  >
+                  <span class="bg-white p-2 rounded-[4px] font-semibold"
+                    >Sass</span
+                  >
+                  <span class="bg-white p-2 rounded-[4px] font-semibold"
+                    >Bootstrap</span
+                  >
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- hero section end -->
-
-    <!-- about section start -->
-    <section id="about" class="pt-36 pb-32 dark:bg-dark">
-      <div class="container">
-        <div class="flex flex-wrap">
-          <div class="w-full px-4 mb-10 lg:w-1/2">
-            <h2 class="font-bold uppercase text-primary text-lg mb-3">About Me</h2>
-            <h3 class="font-bold text-dark text-3xl mb-5 lg:text-4xl light-satu">Coding</h3>
-            <p class="font-medium text-base text-secondary lg:text-lg light-dua">Pertama kali saya mengenal dunia programming waktu itu masih SMK kelas 11, bahasa yang pertama kali saya pelajari pada saat itu adalah HTML. Coding mengajarkan saya untuk melatih cara berpikir, ketelitian, critical thinking, serta kesabaran.</p>
-          </div>
-          <div class="w-full px-4 lg:w-1/2">
-            <h3 class="font-bold text-dark text-3xl mb-5 lg:text-4xl lg:pt-10 light-satu">Hobi</h3>
-            <p class="font-medium text-base text-secondary mb-6 lg:text-lg light-dua">Selain ngoding saya juga hobi berolahraga. Futsal, badminton, basket adalah cabang olahraga yang saya suka. Bermain video game juga menjadi salah satu hobi saya. Action, Adventure, fps adalah genre video game yang sering saya mainkan.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- about section end -->
-
-    <!-- portfolio section start-->
-    <section id="portfolio" class="pt-36 pb-16 bg-slate-200 dark:bg-slate-800">
-      <div class="container">
-        <div class="w-full px-4">
-          <div class="max-w-xl mx-auto text-center mb-16">
-            <h2 class="font-semibold text-3xl text-primary uppercase mb-2 sm:text-4xl lg:text-5xl">Portfolio</h2>
-            <h3 class="font-bold text-dark text-lg mb-4 sm:text-2xl lg:text-3xl capitalize light-satu">Project terbaru</h3>
-            <p class="font-medium text-base text-secondary md:text-lg light-dua">Projek terbaru akan ditampilan di bagian ini</p>
-          </div>
-        </div>
-
-        <div class="w-full px-4 flex flex-wrap xl:w-10/12 xl:mx-auto">
-          <div class="mb-12 p-4 md:w-1/3 ">
-            <div class="rounded-md shadow-md overflow-hidden group">
-              <div class="hovereffect relative group">
-                  <img src="src/img/portfolio/midnight-movie.png" alt="midnight-movie" class="block relative scale-110 transition-all duration-500 ease-in-out group-hover:scale-100">
-                  <div class="overlay absolute top-0 left-0 w-full h-full overflow-hidden transition-all duration-500 ease-in-out group-hover:bg-[#aaaaaa]/40">
-                    <a class="info flex justify-center items-center text-white opacity-0 scale-150 transition-all duration-500 ease-in-out h-full w-full top-0 left-0 group-hover:opacity-100 group-hover:scale-100 group-hover:bg-[#000000]/40" href="https://danamaulana.github.io/movie-midnight/" target="_blank">VISIT PAGE</a>
+            <div class="mb-12 p-4 md:w-1/3">
+              <div class="rounded-md shadow-md overflow-hidden group">
+                <div class="hovereffect relative group">
+                  <img
+                    src="src/img/portfolio/find-movie.png"
+                    alt="find-movie"
+                    class="block relative scale-110 transition-all duration-500 ease-in-out group-hover:scale-100"
+                  />
+                  <div
+                    class="overlay absolute top-0 left-0 w-full h-full overflow-hidden transition-all duration-500 ease-in-out group-hover:bg-[#aaaaaa]/40"
+                  >
+                    <a
+                      class="info flex justify-center items-center text-white opacity-0 scale-150 transition-all duration-500 ease-in-out h-full w-full top-0 left-0 group-hover:opacity-100 group-hover:scale-100 group-hover:bg-[#000000]/40"
+                      href="https://danamaulana.github.io/movie-home/"
+                      target="_blank"
+                      >VISIT PAGE</a
+                    >
                   </div>
+                </div>
+              </div>
+              <a
+                href="https://danamaulana.github.io/movie-home/"
+                target="_blank"
+              >
+                <h4
+                  class="font-medium text-xl text-dark mt-2 mb-3 light-satu inline-block"
+                >
+                  Find Movies
+                </h4>
+              </a>
+              <div class="compatible">
+                <p class="light-satu">Responsive</p>
+                <div class="icon-device mt-3">
+                  <span class="bg-white p-2 rounded-[4px]"
+                    ><i class="fa-solid fa-desktop fa-lg"></i
+                  ></span>
+                  <span class="bg-white p-2 rounded-[4px]"
+                    ><i class="fa-solid fa-laptop fa-lg"></i
+                  ></span>
+                  <span class="bg-white p-2 rounded-[4px]"
+                    ><i class="fa-solid fa-tablet fa-lg"></i
+                  ></span>
+                  <span class="bg-white p-2 rounded-[4px]"
+                    ><i class="fa-solid fa-mobile-screen-button fa-lg"></i
+                  ></span>
+                </div>
+              </div>
+              <div class="stack-tech mt-5">
+                <p class="light-satu">Stack Tech</p>
+                <div class="flex flex-wrap gap-1 mt-3">
+                  <span class="bg-white p-2 rounded-[4px] font-semibold"
+                    >HTML</span
+                  >
+                  <span class="bg-white p-2 rounded-[4px] font-semibold"
+                    >CSS</span
+                  >
+                  <span class="bg-white p-2 rounded-[4px] font-semibold"
+                    >Bootstrap</span
+                  >
+                  <span class="bg-white p-2 rounded-[4px] font-semibold"
+                    >JavaScript</span
+                  >
+                  <span class="bg-white p-2 rounded-[4px] font-semibold"
+                    >jQuery</span
+                  >
+                  <span class="bg-white p-2 rounded-[4px] font-semibold"
+                    >API</span
+                  >
+                </div>
               </div>
             </div>
-            <a href="https://danamaulana.github.io/movie-midnight/" target="_blank">
-              <h4 class="font-medium text-xl text-dark mt-2 mb-3 light-satu inline-block">Midnight Movie</h4>
-            </a>
-            <div class="compatible">
-              <p class="light-satu">Responsive</p>
-              <div class="icon-device mt-3">
-                <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-desktop fa-lg"></i></span>
-                <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-laptop fa-lg"></i></span>
-                <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-tablet fa-lg"></i></span>
-                <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-mobile-screen-button fa-lg"></i></span>
+            <div class="mb-12 p-4 md:w-1/3">
+              <div class="rounded-md shadow-md overflow-hidden group">
+                <div class="hovereffect relative group">
+                  <img
+                    src="src/img/portfolio/first-wedding.png"
+                    alt="first-wedding"
+                    class="block relative scale-110 transition-all duration-500 ease-in-out group-hover:scale-100"
+                  />
+                  <div
+                    class="overlay absolute top-0 left-0 w-full h-full overflow-hidden transition-all duration-500 ease-in-out group-hover:bg-[#aaaaaa]/40"
+                  >
+                    <a
+                      class="info flex justify-center items-center text-white opacity-0 scale-150 transition-all duration-500 ease-in-out h-full w-full top-0 left-0 group-hover:opacity-100 group-hover:scale-100 group-hover:bg-[#000000]/40"
+                      href="https://danamaulana.github.io/dana-wedding/"
+                      target="_blank"
+                      >VISIT PAGE</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <a
+                href="https://danamaulana.github.io/dana-wedding/"
+                target="_blank"
+              >
+                <h4
+                  class="font-medium text-xl text-dark mt-2 mb-3 light-satu inline-block"
+                >
+                  Wedding Website
+                </h4>
+              </a>
+              <div class="compatible">
+                <p class="light-satu">Responsive</p>
+                <div class="icon-device mt-3">
+                  <span class="bg-white p-2 rounded-[4px]"
+                    ><i class="fa-solid fa-desktop fa-lg"></i
+                  ></span>
+                  <span class="bg-white p-2 rounded-[4px]"
+                    ><i class="fa-solid fa-laptop fa-lg"></i
+                  ></span>
+                  <span class="bg-white p-2 rounded-[4px]"
+                    ><i class="fa-solid fa-tablet fa-lg"></i
+                  ></span>
+                  <span class="bg-white p-2 rounded-[4px]"
+                    ><i class="fa-solid fa-mobile-screen-button fa-lg"></i
+                  ></span>
+                </div>
+              </div>
+              <div class="stack-tech mt-5">
+                <p class="light-satu">Stack Tech</p>
+                <div class="flex flex-wrap gap-1 mt-3">
+                  <span class="bg-white p-2 rounded-[4px] font-semibold"
+                    >HTML</span
+                  >
+                  <span class="bg-white p-2 rounded-[4px] font-semibold"
+                    >CSS</span
+                  >
+                  <span class="bg-white p-2 rounded-[4px] font-semibold"
+                    >JavaScript</span
+                  >
+                  <span class="bg-white p-2 rounded-[4px] font-semibold"
+                    >Bootstrap</span
+                  >
+                </div>
               </div>
             </div>
-            <div class="stack-tech mt-5">
-              <p class="light-satu">Stack Tech</p>
-              <div class="flex flex-wrap gap-1 mt-3">
-                <span class="bg-white p-2 rounded-[4px] font-semibold">ReactJS</span>
-                <span class="bg-white p-2 rounded-[4px] font-semibold">JavaScript</span>
-                <span class="bg-white p-2 rounded-[4px] font-semibold">HTML</span>
-                <span class="bg-white p-2 rounded-[4px] font-semibold">Sass</span>
-                <span class="bg-white p-2 rounded-[4px] font-semibold">Bootstrap</span>
+            <div class="mb-12 p-4 md:w-1/3">
+              <div class="rounded-md shadow-md overflow-hidden group">
+                <div class="relative group">
+                  <img
+                    src="src/img/portfolio/weserve.png"
+                    alt="first-wedding"
+                    class="block relative scale-110 transition-all duration-500 ease-in-out group-hover:scale-100"
+                  />
+                  <div
+                    class="absolute top-0 left-0 w-full h-full overflow-hidden transition-all duration-500 ease-in-out group-hover:bg-[#aaaaaa]/40"
+                  >
+                    <a
+                      class="flex justify-center items-center text-white opacity-0 scale-150 transition-all duration-500 ease-in-out h-full w-full top-0 left-0 group-hover:opacity-100 group-hover:scale-100 group-hover:bg-[#000000]/40"
+                      href="https://danamaulana.github.io/portfolio_weserve/"
+                      target="_blank"
+                      >VISIT PAGE</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <a
+                href="https://danamaulana.github.io/portfolio_weserve/"
+                target="_blank"
+              >
+                <h4
+                  class="font-medium text-xl text-dark mt-2 mb-3 light-satu inline-block"
+                >
+                  Business Online
+                </h4>
+              </a>
+              <div class="compatible">
+                <p class="light-satu">Responsive</p>
+                <div class="icon-device mt-3">
+                  <span class="bg-white p-2 rounded-[4px]"
+                    ><i class="fa-solid fa-desktop fa-lg"></i
+                  ></span>
+                  <span class="bg-white p-2 rounded-[4px]"
+                    ><i class="fa-solid fa-laptop fa-lg"></i
+                  ></span>
+                  <span class="bg-white p-2 rounded-[4px]"
+                    ><i class="fa-solid fa-tablet fa-lg"></i
+                  ></span>
+                  <span class="bg-white p-2 rounded-[4px]"
+                    ><i class="fa-solid fa-mobile-screen-button fa-lg"></i
+                  ></span>
+                </div>
+              </div>
+              <div class="stack-tech mt-5">
+                <p class="light-satu">Stack Tech</p>
+                <div class="flex flex-wrap gap-1 mt-3">
+                  <span class="bg-white p-2 rounded-[4px] font-semibold"
+                    >HTML</span
+                  >
+                  <span class="bg-white p-2 rounded-[4px] font-semibold"
+                    >CSS</span
+                  >
+                  <span class="bg-white p-2 rounded-[4px] font-semibold"
+                    >JavaScript</span
+                  >
+                  <span class="bg-white p-2 rounded-[4px] font-semibold"
+                    >Tailwind</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="mb-12 p-4 md:w-1/3">
+              <div class="rounded-md shadow-md overflow-hidden group">
+                <div class="relative group">
+                  <img
+                    src="src/img/portfolio/real-estate-one.png"
+                    alt="first-wedding"
+                    class="block relative scale-110 transition-all duration-500 ease-in-out group-hover:scale-100"
+                  />
+                  <div
+                    class="absolute top-0 left-0 w-full h-full overflow-hidden transition-all duration-500 ease-in-out group-hover:bg-[#aaaaaa]/40"
+                  >
+                    <a
+                      class="flex justify-center items-center text-white opacity-0 scale-150 transition-all duration-500 ease-in-out h-full w-full top-0 left-0 group-hover:opacity-100 group-hover:scale-100 group-hover:bg-[#000000]/40"
+                      href="https://danamaulana.github.io/real-estate/"
+                      target="_blank"
+                      >VISIT PAGE</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <a
+                href="https://danamaulana.github.io/real-estate/"
+                target="_blank"
+              >
+                <h4
+                  class="font-medium text-xl text-dark mt-2 mb-3 light-satu inline-block"
+                >
+                  Future Property
+                </h4>
+              </a>
+              <div class="compatible">
+                <p class="light-satu">Responsive</p>
+                <div class="icon-device mt-3">
+                  <span class="bg-white p-2 rounded-[4px]"
+                    ><i class="fa-solid fa-desktop fa-lg"></i
+                  ></span>
+                  <span class="bg-white p-2 rounded-[4px]"
+                    ><i class="fa-solid fa-laptop fa-lg"></i
+                  ></span>
+                  <span class="bg-white p-2 rounded-[4px]"
+                    ><i class="fa-solid fa-tablet fa-lg"></i
+                  ></span>
+                  <span class="bg-white p-2 rounded-[4px]"
+                    ><i class="fa-solid fa-mobile-screen-button fa-lg"></i
+                  ></span>
+                </div>
+              </div>
+              <div class="stack-tech mt-5">
+                <p class="light-satu">Stack Tech</p>
+                <div class="flex flex-wrap gap-1 mt-3">
+                  <span class="bg-white p-2 rounded-[4px] font-semibold"
+                    >HTML</span
+                  >
+                  <span class="bg-white p-2 rounded-[4px] font-semibold"
+                    >CSS</span
+                  >
+                  <span class="bg-white p-2 rounded-[4px] font-semibold"
+                    >JavaScript</span
+                  >
+                  <span class="bg-white p-2 rounded-[4px] font-semibold"
+                    >Tailwind</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="mb-12 p-4 md:w-1/3">
+              <div class="rounded-md shadow-md overflow-hidden group">
+                <div class="relative group">
+                  <img
+                    src="src/img/portfolio/showcase-nft.png"
+                    alt="first-wedding"
+                    class="block relative scale-110 transition-all duration-500 ease-in-out group-hover:scale-100"
+                  />
+                  <div
+                    class="absolute top-0 left-0 w-full h-full overflow-hidden transition-all duration-500 ease-in-out group-hover:bg-[#aaaaaa]/40"
+                  >
+                    <a
+                      class="flex justify-center items-center text-white opacity-0 scale-150 transition-all duration-500 ease-in-out h-full w-full top-0 left-0 group-hover:opacity-100 group-hover:scale-100 group-hover:bg-[#000000]/40"
+                      href="https://danamaulana.github.io/showcase-nft/"
+                      target="_blank"
+                      >VISIT PAGE</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <a
+                href="https://danamaulana.github.io/showcase-nft/"
+                target="_blank"
+              >
+                <h4
+                  class="font-medium text-xl text-dark mt-2 mb-3 light-satu inline-block"
+                >
+                  Showcase NFT
+                </h4>
+              </a>
+              <div class="compatible">
+                <p class="light-satu">Responsive</p>
+                <div class="icon-device mt-3">
+                  <span class="bg-white p-2 rounded-[4px]"
+                    ><i class="fa-solid fa-desktop fa-lg"></i
+                  ></span>
+                  <span class="bg-white p-2 rounded-[4px]"
+                    ><i class="fa-solid fa-laptop fa-lg"></i
+                  ></span>
+                  <span class="bg-white p-2 rounded-[4px]"
+                    ><i class="fa-solid fa-tablet fa-lg"></i
+                  ></span>
+                  <span class="bg-white p-2 rounded-[4px]"
+                    ><i class="fa-solid fa-mobile-screen-button fa-lg"></i
+                  ></span>
+                </div>
+              </div>
+              <div class="stack-tech mt-5">
+                <p class="light-satu">Stack Tech</p>
+                <div class="flex flex-wrap gap-1 mt-3">
+                  <span class="bg-white p-2 rounded-[4px] font-semibold"
+                    >HTML</span
+                  >
+                  <span class="bg-white p-2 rounded-[4px] font-semibold"
+                    >CSS</span
+                  >
+                  <span class="bg-white p-2 rounded-[4px] font-semibold"
+                    >JavaScript</span
+                  >
+                  <span class="bg-white p-2 rounded-[4px] font-semibold"
+                    >Tailwind</span
+                  >
+                </div>
               </div>
             </div>
           </div>
-          <div class="mb-12 p-4 md:w-1/3 ">
-            <div class="rounded-md shadow-md overflow-hidden group">
-              <div class="hovereffect relative group">
-                  <img src="src/img/portfolio/find-movie.png" alt="find-movie" class="block relative scale-110 transition-all duration-500 ease-in-out group-hover:scale-100">
-                  <div class="overlay absolute top-0 left-0 w-full h-full overflow-hidden transition-all duration-500 ease-in-out group-hover:bg-[#aaaaaa]/40">
-                    <a class="info flex justify-center items-center text-white opacity-0 scale-150 transition-all duration-500 ease-in-out h-full w-full top-0 left-0 group-hover:opacity-100 group-hover:scale-100 group-hover:bg-[#000000]/40" href="https://danamaulana.github.io/movie-home/" target="_blank">VISIT PAGE</a>
-                  </div>
-              </div>
-            </div>
-            <a href="https://danamaulana.github.io/movie-home/" target="_blank">
-              <h4 class="font-medium text-xl text-dark mt-2 mb-3 light-satu inline-block">Find Movies</h4>
-            </a>
-            <div class="compatible">
-              <p class="light-satu">Responsive</p>
-              <div class="icon-device mt-3">
-                <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-desktop fa-lg"></i></span>
-                <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-laptop fa-lg"></i></span>
-                <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-tablet fa-lg"></i></span>
-                <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-mobile-screen-button fa-lg"></i></span>
-              </div>
-            </div>
-            <div class="stack-tech mt-5">
-              <p class="light-satu">Stack Tech</p>
-              <div class="flex flex-wrap gap-1 mt-3">
-                <span class="bg-white p-2 rounded-[4px] font-semibold">HTML</span>
-                <span class="bg-white p-2 rounded-[4px] font-semibold">CSS</span>
-                <span class="bg-white p-2 rounded-[4px] font-semibold">Bootstrap</span>
-                <span class="bg-white p-2 rounded-[4px] font-semibold">JavaScript</span>
-                <span class="bg-white p-2 rounded-[4px] font-semibold">jQuery</span>
-                <span class="bg-white p-2 rounded-[4px] font-semibold">API</span>
-              </div>
-            </div>
-          </div>
-          <div class="mb-12 p-4 md:w-1/3 ">
-            <div class="rounded-md shadow-md overflow-hidden group">
-              <div class="hovereffect relative group">
-                  <img src="src/img/portfolio/first-wedding.png" alt="first-wedding" class="block relative scale-110 transition-all duration-500 ease-in-out group-hover:scale-100">
-                  <div class="overlay absolute top-0 left-0 w-full h-full overflow-hidden transition-all duration-500 ease-in-out group-hover:bg-[#aaaaaa]/40">
-                    <a class="info flex justify-center items-center text-white opacity-0 scale-150 transition-all duration-500 ease-in-out h-full w-full top-0 left-0 group-hover:opacity-100 group-hover:scale-100 group-hover:bg-[#000000]/40" href="https://danamaulana.github.io/dana-wedding/" target="_blank">VISIT PAGE</a>
-                  </div>
-              </div>
-            </div>
-            <a href="https://danamaulana.github.io/dana-wedding/" target="_blank">
-              <h4 class="font-medium text-xl text-dark mt-2 mb-3 light-satu inline-block">Wedding Website</h4>
-            </a>
-            <div class="compatible">
-              <p class="light-satu">Responsive</p>
-              <div class="icon-device mt-3">
-                <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-desktop fa-lg"></i></span>
-                <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-laptop fa-lg"></i></span>
-                <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-tablet fa-lg"></i></span>
-                <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-mobile-screen-button fa-lg"></i></span>
-              </div>
-            </div>
-            <div class="stack-tech mt-5">
-              <p class="light-satu">Stack Tech</p>
-              <div class="flex flex-wrap gap-1 mt-3">
-                <span class="bg-white p-2 rounded-[4px] font-semibold">HTML</span>
-                <span class="bg-white p-2 rounded-[4px] font-semibold">CSS</span>
-                <span class="bg-white p-2 rounded-[4px] font-semibold">JavaScript</span>
-                <span class="bg-white p-2 rounded-[4px] font-semibold">Bootstrap</span>
-              </div>
-            </div>
-          </div>
-          <div class="mb-12 p-4 md:w-1/3">
-            <div class="rounded-md shadow-md overflow-hidden group">
-              <div class="relative group">
-                  <img src="src/img/portfolio/weserve.png" alt="first-wedding" class="block relative scale-110 transition-all duration-500 ease-in-out group-hover:scale-100">
-                  <div class="absolute top-0 left-0 w-full h-full overflow-hidden transition-all duration-500 ease-in-out group-hover:bg-[#aaaaaa]/40">
-                    <a class="flex justify-center items-center text-white opacity-0 scale-150 transition-all duration-500 ease-in-out h-full w-full top-0 left-0 group-hover:opacity-100 group-hover:scale-100 group-hover:bg-[#000000]/40" href="https://danamaulana.github.io/portfolio_weserve/" target="_blank">VISIT PAGE</a>
-                  </div>
-              </div>
-            </div>
-            <a href="https://danamaulana.github.io/portfolio_weserve/" target="_blank">
-              <h4 class="font-medium text-xl text-dark mt-2 mb-3 light-satu inline-block">Business Online</h4>
-            </a>
-            <div class="compatible">
-              <p class="light-satu">Responsive</p>
-              <div class="icon-device mt-3">
-                <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-desktop fa-lg"></i></span>
-                <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-laptop fa-lg"></i></span>
-                <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-tablet fa-lg"></i></span>
-                <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-mobile-screen-button fa-lg"></i></span>
-              </div>
-            </div>
-            <div class="stack-tech mt-5">
-              <p class="light-satu">Stack Tech</p>
-              <div class="flex flex-wrap gap-1 mt-3">
-                <span class="bg-white p-2 rounded-[4px] font-semibold">HTML</span>
-                <span class="bg-white p-2 rounded-[4px] font-semibold">CSS</span>
-                <span class="bg-white p-2 rounded-[4px] font-semibold">JavaScript</span>
-                <span class="bg-white p-2 rounded-[4px] font-semibold">Tailwind</span>
-              </div>
-            </div>
-          </div>
-          <div class="mb-12 p-4 md:w-1/3">
-            <div class="rounded-md shadow-md overflow-hidden group">
-              <div class="relative group">
-                  <img src="src/img/portfolio/real-estate-one.png" alt="first-wedding" class="block relative scale-110 transition-all duration-500 ease-in-out group-hover:scale-100">
-                  <div class="absolute top-0 left-0 w-full h-full overflow-hidden transition-all duration-500 ease-in-out group-hover:bg-[#aaaaaa]/40">
-                    <a class="flex justify-center items-center text-white opacity-0 scale-150 transition-all duration-500 ease-in-out h-full w-full top-0 left-0 group-hover:opacity-100 group-hover:scale-100 group-hover:bg-[#000000]/40" href="https://danamaulana.github.io/real-estate/" target="_blank">VISIT PAGE</a>
-                  </div>
-              </div>
-            </div>
-            <a href="https://danamaulana.github.io/real-estate/" target="_blank">
-              <h4 class="font-medium text-xl text-dark mt-2 mb-3 light-satu inline-block">Future Property</h4>
-            </a>
-            <div class="compatible">
-              <p class="light-satu">Responsive</p>
-              <div class="icon-device mt-3">
-                <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-desktop fa-lg"></i></span>
-                <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-laptop fa-lg"></i></span>
-                <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-tablet fa-lg"></i></span>
-                <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-mobile-screen-button fa-lg"></i></span>
-              </div>
-            </div>
-            <div class="stack-tech mt-5">
-              <p class="light-satu">Stack Tech</p>
-              <div class="flex flex-wrap gap-1 mt-3">
-                <span class="bg-white p-2 rounded-[4px] font-semibold">HTML</span>
-                <span class="bg-white p-2 rounded-[4px] font-semibold">CSS</span>
-                <span class="bg-white p-2 rounded-[4px] font-semibold">JavaScript</span>
-                <span class="bg-white p-2 rounded-[4px] font-semibold">Tailwind</span>
-              </div>
-            </div>
-          </div>
-          <div class="mb-12 p-4 md:w-1/3">
-            <div class="rounded-md shadow-md overflow-hidden group">
-              <div class="relative group">
-                  <img src="src/img/portfolio/showcase-nft.png" alt="first-wedding" class="block relative scale-110 transition-all duration-500 ease-in-out group-hover:scale-100">
-                  <div class="absolute top-0 left-0 w-full h-full overflow-hidden transition-all duration-500 ease-in-out group-hover:bg-[#aaaaaa]/40">
-                    <a class="flex justify-center items-center text-white opacity-0 scale-150 transition-all duration-500 ease-in-out h-full w-full top-0 left-0 group-hover:opacity-100 group-hover:scale-100 group-hover:bg-[#000000]/40" href="https://danamaulana.github.io/showcase-nft/" target="_blank">VISIT PAGE</a>
-                  </div>
-              </div>
-            </div>
-            <a href="https://danamaulana.github.io/showcase-nft/" target="_blank">
-              <h4 class="font-medium text-xl text-dark mt-2 mb-3 light-satu inline-block">Showcase NFT</h4>
-            </a>
-            <div class="compatible">
-              <p class="light-satu">Responsive</p>
-              <div class="icon-device mt-3">
-                <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-desktop fa-lg"></i></span>
-                <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-laptop fa-lg"></i></span>
-                <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-tablet fa-lg"></i></span>
-                <span class="bg-white p-2 rounded-[4px]"><i class="fa-solid fa-mobile-screen-button fa-lg"></i></span>
-              </div>
-            </div>
-            <div class="stack-tech mt-5">
-              <p class="light-satu">Stack Tech</p>
-              <div class="flex flex-wrap gap-1 mt-3">
-                <span class="bg-white p-2 rounded-[4px] font-semibold">HTML</span>
-                <span class="bg-white p-2 rounded-[4px] font-semibold">CSS</span>
-                <span class="bg-white p-2 rounded-[4px] font-semibold">JavaScript</span>
-                <span class="bg-white p-2 rounded-[4px] font-semibold">Tailwind</span>
-              </div>
-            </div>
+          <div class="flex justify-center py-7">
+            <a
+              href="public/more_portfolio.html"
+              class="font-semibold text-base text-primary"
+              >Explore More <i class="fa-solid fa-circle-chevron-right"></i
+            ></a>
           </div>
         </div>
-        <div class="flex justify-center py-7">
-          <a href="public/more_portfolio.html" class="font-semibold text-base text-primary">Explore More <i class="fa-solid fa-circle-chevron-right"></i></a>
-        </div>
-      </div>
-    </section>
-    <!-- portfolio section end -->
+      </section>
+      <!-- portfolio section end -->
 
-    <!-- skills section start -->
-    <section id="skills" class="pt-36 pb-32 bg-slate-700 dark:bg-slate-200">
-      <div class="container">
-        <div class="w-full px-4">
-          <div class="mx-auto mb-10">
-            <h2 class="font-semibold text-3xl text-primary uppercase mb-2 sm:text-4xl lg:text-5xl text-center">Skills</h2>
-          </div>
-        </div>
-        
-        <h3 class="font-bold text-slate-200 text-lg mb-5 capitalize sm:text-2xl lg:text-3xl dark:text-dark">Hard skills</h3>
-        <div class="w-full px-4 font-RobotoMono">
-          <div class="flex flex-col justify-start items-center gap-y-5 dark:text-dark text-white">
-            <!-- front-end web -->
-            <div class="w-full flex flex-col justify-start gap-y-3">
-              <div class="heading">
-                <h4 class="py-1 px-2 font-semibold text-lg underline decoration-dashed underline-offset-8">FRONT-END WEB</h4>
-              </div>
-              <div class="body ml-3 flex flex-wrap gap-3">
-                <span class="button-style border-[#f16429] hover:bg-[#f16429]">HTML</span>
-                <span class="button-style border-[#1b87c6] hover:bg-[#1b87c6]">CSS</span>
-                <span class="button-style border-[#aca238] hover:bg-[#aca238]">JavaScript</span>
-                <span class="button-style border-[#5ed3f3] hover:bg-[#5ed3f3]">ReactJS</span>
-                <span class="button-style border-[#c66394] hover:bg-[#c66394]">Sass</span>
-                <span class="button-style border-[#7911f8] hover:bg-[#7911f8]">Bootstrap</span>
-                <span class="button-style border-[#06b6d4] hover:bg-[#06b6d4]">Tailwind</span>
-                <span class="button-style border-[#0868ab] hover:bg-[#0868ab]">jQuery</span>
-                <span class="button-style border-[#009b60] hover:bg-[#009b60]">RESTfull API</span>
-              </div>
-            </div>
-            <!-- back-end web -->
-            <div class="w-full flex flex-col justify-start gap-y-3">
-              <div class="heading">
-                <h4 class="py-1 px-2 font-semibold text-lg underline decoration-dashed underline-offset-8">BACK-END WEB</h4>
-              </div>
-              <div class="body ml-3 flex flex-wrap gap-3">
-                <span class="button-style border-[#8993be] hover:bg-[#8993be]">PHP</span>
-                <span class="button-style border-[#3771a3] hover:bg-[#3771a3]">Python</span>
-                <span class="button-style border-[#ee4323] hover:bg-[#ee4323]">CodeIgniter</span>
-                <span class="button-style border-[#e47216] hover:bg-[#e47216]">Mysql</span>
-              </div>
-            </div>
-            <!-- mobile apps -->
-            <div class="w-full flex flex-col justify-start gap-y-3">
-              <div class="heading">
-                <h4 class="py-1 px-2 font-semibold text-lg underline decoration-dashed underline-offset-8">MOBILE APPS</h4>
-              </div>
-              <div class="body ml-3 flex flex-wrap gap-3">
-                <span class="button-style border-[#00a4e4] hover:bg-[#00a4e4]">Dart</span>
-                <span class="button-style border-[#45d1fd] hover:bg-[#45d1fd]">Flutter</span>
-              </div>
-            </div>
-            <!-- code version control -->
-            <div class="w-full flex flex-col justify-start gap-y-3">
-              <div class="heading">
-                <h4 class="py-1 px-2 font-semibold text-lg underline decoration-dashed underline-offset-8">CODE VERSION CONTROL</h4>
-              </div>
-              <div class="body ml-3 flex flex-wrap gap-3">
-                <span class="button-style border-[#f05033] hover:bg-[#f05033]">Git</span>
-                <span class="button-style border-[#000000] hover:bg-[#000000]">Github</span>
-              </div>
-            </div>
-            <!-- etc -->
-            <div class="w-full flex flex-col justify-start gap-y-3">
-              <div class="heading">
-                <h4 class="py-1 px-2 font-semibold text-lg underline decoration-dashed underline-offset-8">Etc.</h4>
-              </div>
-              <div class="body ml-3 flex flex-wrap gap-3">
-                <span class="button-style border-[#001c33] hover:bg-[#001c33]">Photoshop</span>
-                <span class="button-style border-[#ff9d08] hover:bg-[#ff9d08]">Illustrator</span>
-                <span class="button-style border-[#2a5893] hover:bg-[#2a5893]">Ms Word</span>
-                <span class="button-style border-[#165936] hover:bg-[#165936]">Ms Excel</span>
-              </div>
+      <!-- skills section start -->
+      <section id="skills" class="pt-36 pb-32 bg-slate-700 dark:bg-slate-200">
+        <div class="container">
+          <div class="w-full px-4">
+            <div class="mx-auto mb-10">
+              <h2
+                class="font-semibold text-3xl text-primary uppercase mb-2 sm:text-4xl lg:text-5xl text-center"
+              >
+                Skills
+              </h2>
             </div>
           </div>
-        </div>
-        <h3 class="font-bold text-slate-200 text-lg mb-5 capitalize sm:text-2xl lg:text-3xl dark:text-dark mt-14">Soft skills</h3>
-        <div class="w-full px-4 font-RobotoMono">
-          <div class="flex flex-col justify-start items-center gap-y-5 dark:text-dark text-white">
-            <!-- front-end web -->
-            <div class="w-full flex flex-col justify-start gap-y-3">
-              <div class="body ml-3 flex flex-col gap-3">
-                <span class="list-soft-skills block">> Logical Thinking</span>
-                <span class="list-soft-skills block">> Analytical Thinking</span>
-                <span class="list-soft-skills block">> Problem-Solving</span>
-                <span class="list-soft-skills block">> Attention to Detail</span>
-                <span class="list-soft-skills block">> Critical Thinking</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- skills section end -->
 
-    <!-- blog section start -->
-    <section id="blog" class="pt-36 pb-32 bg-slate-200 dark:bg-slate-800">
-      <div class="container">
-        <div class="w-full px-4">
-          <div class="max-w-xl mx-auto text-center mb-16">
-            <h2 class="font-semibold text-3xl text-primary uppercase mb-2 sm:text-4xl lg:text-5xl">blog</h2>
-            <p class="font-medium text-base text-secondary md:text-lg light-dua">Blog terbaru akan ditampilkan di bagian terdepan di bagian ini</p>
+          <h3
+            class="font-bold text-slate-200 text-lg mb-5 capitalize sm:text-2xl lg:text-3xl dark:text-dark"
+          >
+            Hard skills
+          </h3>
+          <div class="w-full px-4 font-RobotoMono">
+            <div
+              class="flex flex-col justify-start items-center gap-y-5 dark:text-dark text-white"
+            >
+              <!-- front-end web -->
+              <div class="w-full flex flex-col justify-start gap-y-3">
+                <div class="heading">
+                  <h4
+                    class="py-1 px-2 font-semibold text-lg underline decoration-dashed underline-offset-8"
+                  >
+                    FRONT-END WEB
+                  </h4>
+                </div>
+                <div class="body ml-3 flex flex-wrap gap-3">
+                  <span class="button-style border-[#f16429] hover:bg-[#f16429]"
+                    >HTML</span
+                  >
+                  <span class="button-style border-[#1b87c6] hover:bg-[#1b87c6]"
+                    >CSS</span
+                  >
+                  <span class="button-style border-[#aca238] hover:bg-[#aca238]"
+                    >JavaScript</span
+                  >
+                  <span class="button-style border-[#5ed3f3] hover:bg-[#5ed3f3]"
+                    >ReactJS</span
+                  >
+                  <span class="button-style border-[#c66394] hover:bg-[#c66394]"
+                    >Sass</span
+                  >
+                  <span class="button-style border-[#7911f8] hover:bg-[#7911f8]"
+                    >Bootstrap</span
+                  >
+                  <span class="button-style border-[#06b6d4] hover:bg-[#06b6d4]"
+                    >Tailwind</span
+                  >
+                  <span class="button-style border-[#0868ab] hover:bg-[#0868ab]"
+                    >jQuery</span
+                  >
+                  <span class="button-style border-[#009b60] hover:bg-[#009b60]"
+                    >RESTfull API</span
+                  >
+                </div>
+              </div>
+              <!-- back-end web -->
+              <div class="w-full flex flex-col justify-start gap-y-3">
+                <div class="heading">
+                  <h4
+                    class="py-1 px-2 font-semibold text-lg underline decoration-dashed underline-offset-8"
+                  >
+                    BACK-END WEB
+                  </h4>
+                </div>
+                <div class="body ml-3 flex flex-wrap gap-3">
+                  <span class="button-style border-[#8993be] hover:bg-[#8993be]"
+                    >PHP</span
+                  >
+                  <span class="button-style border-[#3a75b0] hover:bg-[#3a75b0]"
+                    >Java</span
+                  >
+                  <span class="button-style border-[#3771a3] hover:bg-[#3771a3]"
+                    >Python</span
+                  >
+                  <span class="button-style border-[#1e6887] hover:bg-[#1e6887]"
+                    >Yii Framwework</span
+                  >
+                  <span class="button-style border-[#ee4323] hover:bg-[#ee4323]"
+                    >CodeIgniter</span
+                  >
+                  <span class="button-style border-[#f4392e] hover:bg-[#f4392e]"
+                    >Laravel</span
+                  >
+                </div>
+              </div>
+              <!-- DBMS -->
+              <div class="w-full flex flex-col justify-start gap-y-3">
+                <div class="heading">
+                  <h4
+                    class="py-1 px-2 font-semibold text-lg underline decoration-dashed underline-offset-8"
+                  >
+                    DBMS
+                  </h4>
+                </div>
+                <div class="body ml-3 flex flex-wrap gap-3">
+                  <span class="button-style border-[#e47216] hover:bg-[#e47216]"
+                    >Mysql</span
+                  >
+                </div>
+              </div>
+              <!-- mobile apps -->
+              <div class="w-full flex flex-col justify-start gap-y-3">
+                <div class="heading">
+                  <h4
+                    class="py-1 px-2 font-semibold text-lg underline decoration-dashed underline-offset-8"
+                  >
+                    MOBILE APPS
+                  </h4>
+                </div>
+                <div class="body ml-3 flex flex-wrap gap-3">
+                  <span class="button-style border-[#00a4e4] hover:bg-[#00a4e4]"
+                    >Dart</span
+                  >
+                  <span class="button-style border-[#45d1fd] hover:bg-[#45d1fd]"
+                    >Flutter</span
+                  >
+                </div>
+              </div>
+              <!-- code version control -->
+              <div class="w-full flex flex-col justify-start gap-y-3">
+                <div class="heading">
+                  <h4
+                    class="py-1 px-2 font-semibold text-lg underline decoration-dashed underline-offset-8"
+                  >
+                    VERSION CONTROL
+                  </h4>
+                </div>
+                <div class="body ml-3 flex flex-wrap gap-3">
+                  <span class="button-style border-[#f05033] hover:bg-[#f05033]"
+                    >Git</span
+                  >
+                  <span class="button-style border-[#000000] hover:bg-[#000000]"
+                    >Github</span
+                  >
+                </div>
+              </div>
+              <!-- Other -->
+              <div class="w-full flex flex-col justify-start gap-y-3">
+                <div class="heading">
+                  <h4
+                    class="py-1 px-2 font-semibold text-lg underline decoration-dashed underline-offset-8"
+                  >
+                    Other
+                  </h4>
+                </div>
+                <div class="body ml-3 flex flex-wrap gap-3">
+                  <span class="button-style border-[#001c33] hover:bg-[#001c33]"
+                    >Adobe Photoshop</span
+                  >
+                  <span class="button-style border-[#ff9d08] hover:bg-[#ff9d08]"
+                    >Adobe illustrator</span
+                  >
+                  <span class="button-style border-[#6cb94e] hover:bg-[#6cb94e]"
+                    >Corel DRAW</span
+                  >
+                  <span class="button-style border-[#2a5893] hover:bg-[#2a5893]"
+                    >Ms Word</span
+                  >
+                  <span class="button-style border-[#165936] hover:bg-[#165936]"
+                    >Ms Excel</span
+                  >
+                  <span class="button-style border-[#f7a400] hover:bg-[#f7a400]"
+                    >Google Analytics 4</span
+                  >
+                  <span class="button-style border-[#4081ec] hover:bg-[#4081ec]"
+                    >Google Tag Manager</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <h3
+            class="font-bold text-slate-200 text-lg mb-5 capitalize sm:text-2xl lg:text-3xl dark:text-dark mt-14"
+          >
+            Soft skills
+          </h3>
+          <div class="w-full px-4 font-RobotoMono">
+            <div
+              class="flex flex-col justify-start items-center gap-y-5 dark:text-dark text-white"
+            >
+              <!-- front-end web -->
+              <div class="w-full flex flex-col justify-start gap-y-3">
+                <div class="body ml-3 flex flex-col gap-3">
+                  <span class="list-soft-skills block">> Logical Thinking</span>
+                  <span class="list-soft-skills block"
+                    >> Analytical Thinking</span
+                  >
+                  <span class="list-soft-skills block">> Problem-Solving</span>
+                  <span class="list-soft-skills block"
+                    >> Attention to Detail</span
+                  >
+                  <span class="list-soft-skills block"
+                    >> Critical Thinking</span
+                  >
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <h2 class="text-2xl text-center dark:text-white"><i class="fa-solid fa-triangle-exclamation fa-2xl"></i> Blog sedang dalam masa pembuatan, belum ada yang ditampilkan satupun</h2>
-        <!-- <div class="flex flex-wrap">
+      </section>
+      <!-- skills section end -->
+
+      <!-- blog section start -->
+      <section id="blog" class="pt-36 pb-32 bg-slate-200 dark:bg-slate-800">
+        <div class="container">
+          <div class="w-full px-4">
+            <div class="max-w-xl mx-auto text-center mb-16">
+              <h2
+                class="font-semibold text-3xl text-primary uppercase mb-2 sm:text-4xl lg:text-5xl"
+              >
+                blog
+              </h2>
+              <p
+                class="font-medium text-base text-secondary md:text-lg light-dua"
+              >
+                Blog terbaru akan ditampilkan di bagian terdepan di bagian ini
+              </p>
+            </div>
+          </div>
+          <h2 class="text-2xl text-center dark:text-white">
+            <i class="fa-solid fa-triangle-exclamation fa-2xl"></i> Blog sedang
+            dalam masa pembuatan, belum ada yang ditampilkan satupun
+          </h2>
+          <!-- <div class="flex flex-wrap">
           <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
             <div class="bg-white dark:bg-slate-700 rounded-xl shadow-lg overflow-hidden mb-10">
               <img src="src/img/blog/blog1.jpg" alt="blog1" class="w-full">
@@ -452,101 +914,254 @@
             </div>
           </div>
         </div> -->
-      </div>
-    </section>
-    <!-- blog section end -->
-
-    <!-- contact section start -->
-    <section id="contact" class="pt-36 pb-32 bg-slate-100 dark:bg-dark">
-      <div class="container">
-        <div class="w-full px-4">
-          <div class="max-w-2xl mx-auto text-center mb-16">
-            <h2 class="font-semibold text-3xl text-primary uppercase mb-2 sm:text-4xl lg:text-5xl">contact</h2>
-            <p class="font-medium text-base text-secondary md:text-lg light-dua">Anda bisa menghubungi saya melalui tautan sosial media yang tertera di bagian paling bawah dari halaman ini, atau bisa juga melalui email di kolom berikut.</p>
-          </div>
         </div>
-        <form name="submit-to-google-sheet">
-          <div class="w-full lg:w-2/3 lg:mx-auto">
-            <div class="w-full px-4 mb-8">
-              <!-- close alert -->
-              <div id="alertBox" class="hidden p-5 bg-green-600 text-white mb-5 items-center justify-between rounded-lg">
-                <span><strong>Terima kasih!</strong> pesan anda suda terkirim.</span>
-                <span class="ml-4 text-white font-bold text-[22px] hover:text-dark cursor-pointer transition duration-300" onclick="closeAlert()">&times;</span>
+      </section>
+      <!-- blog section end -->
+
+      <!-- contact section start -->
+      <section id="contact" class="pt-36 pb-32 bg-slate-100 dark:bg-dark">
+        <div class="container">
+          <div class="w-full px-4">
+            <div class="max-w-2xl mx-auto text-center mb-16">
+              <h2
+                class="font-semibold text-3xl text-primary uppercase mb-2 sm:text-4xl lg:text-5xl"
+              >
+                contact
+              </h2>
+              <p
+                class="font-medium text-base text-secondary md:text-lg light-dua"
+              >
+                Anda bisa menghubungi saya melalui tautan sosial media yang
+                tertera di bagian paling bawah dari halaman ini, atau bisa juga
+                melalui email di kolom berikut.
+              </p>
+            </div>
+          </div>
+          <form name="submit-to-google-sheet">
+            <div class="w-full lg:w-2/3 lg:mx-auto">
+              <div class="w-full px-4 mb-8">
+                <!-- close alert -->
+                <div
+                  id="alertBox"
+                  class="hidden p-5 bg-green-600 text-white mb-5 items-center justify-between rounded-lg"
+                >
+                  <span
+                    ><strong>Terima kasih!</strong> pesan anda suda
+                    terkirim.</span
+                  >
+                  <span
+                    class="ml-4 text-white font-bold text-[22px] hover:text-dark cursor-pointer transition duration-300"
+                    onclick="closeAlert()"
+                    >&times;</span
+                  >
+                </div>
+                <!-- end alert -->
+                <label
+                  for="name"
+                  class="text-base font-bold text-primary capitalize"
+                  >nama</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  name="nama"
+                  class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary"
+                />
               </div>
-              <!-- end alert -->
-              <label for="name" class="text-base font-bold text-primary capitalize">nama</label>
-              <input type="text" id="name" name="nama" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary">
+              <div class="w-full px-4 mb-8">
+                <label
+                  for="email"
+                  class="text-base font-bold text-primary capitalize"
+                  >email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary"
+                />
+              </div>
+              <div class="w-full px-4 mb-8">
+                <label
+                  for="message"
+                  class="text-base font-bold text-primary capitalize"
+                  >pesan</label
+                >
+                <textarea
+                  type="text"
+                  id="message"
+                  name="pesan"
+                  class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary h-36"
+                ></textarea>
+              </div>
+              <div class="w-full px-4">
+                <button
+                  type="submit"
+                  class="btn-kirim text-base font-semibold text-white bg-primary py-3 px-8 rounded-full w-full hover:opacity-80 hover:shadow-lg transition ease-in-out"
+                >
+                  kirim
+                </button>
+              </div>
+              <div class="w-full px-4">
+                <button
+                  type="submit"
+                  class="btn-loading hidden text-base font-semibold text-white bg-primary py-3 px-8 rounded-full w-full hover:opacity-80 hover:shadow-lg transition ease-in-out"
+                >
+                  <i class="fa-solid fa-spinner fa-spin-pulse"></i> kirim<i
+                    class="fa-solid fa-ellipsis translate-y-1"
+                  ></i>
+                </button>
+              </div>
             </div>
-            <div class="w-full px-4 mb-8">
-              <label for="email" class="text-base font-bold text-primary capitalize">email</label>
-              <input type="email" id="email" name="email" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary">
-            </div>
-            <div class="w-full px-4 mb-8">
-              <label for="message" class="text-base font-bold text-primary capitalize">pesan</label>
-              <textarea type="text" id="message" name="pesan" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary h-36"></textarea>
-            </div>
-            <div class="w-full px-4"><button type="submit" class="btn-kirim text-base font-semibold text-white bg-primary py-3 px-8 rounded-full w-full hover:opacity-80 hover:shadow-lg transition ease-in-out">kirim</button></div>
-            <div class="w-full px-4"><button type="submit" class="btn-loading hidden text-base font-semibold text-white bg-primary py-3 px-8 rounded-full w-full hover:opacity-80 hover:shadow-lg transition ease-in-out"><i class="fa-solid fa-spinner fa-spin-pulse"></i> kirim<i class="fa-solid fa-ellipsis translate-y-1"></i></button></div>
-          </div>
-          
-        </form>
-      </div>
-    </section>
-    <!-- contact section end -->
-  </main>
-  <!-- main end -->
-
-  <!-- footer start -->
-  <footer class="bg-dark pt-24 pb-12 dark:bg-slate-200">
-    <div class="container">
-      <div class="flex flex-wrap">
-        <div class="w-full px-4 mb-12 text-slate-300 font-medium md:w-1/3">
-          <h3 class="font-bold text-4xl text-white mb-5 uppercase dark:text-dark">monday tech</h3>
-          <h4 class="font-bold text-2xl mb-2 capitalize dark:text-dark">hubungi kami</h4>
-          <div class="w-full border-slate-700 dark:border-slate-500">
-            <div class="flex items-center mb-5">
-              <a href="https://www.instagram.com/_danam3/" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-200 dark:border-slate-800 hover:border-[#E4405F] hover:bg-[#E4405F] text-slate-200 dark:text-slate-800 dark:hover:text-white dark:hover:border-none"><i class="fa-brands fa-instagram fa-lg"></i></a>
-              <a href="https://twitter.com/DanaMaulanaDev" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-200 dark:border-slate-800 hover:border-[#000000] hover:bg-[#000000] text-slate-200 dark:text-slate-800 dark:hover:text-white dark:hover:border-none"><i class="fa-brands fa-x-twitter fa-lg"></i></a>
-              <a href="https://web.facebook.com/dana.maulana.794/" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-200 dark:border-slate-800 hover:border-[#0866FF] hover:bg-[#0866FF] text-slate-200 dark:text-slate-800 dark:hover:text-white dark:hover:border-none"><i class="fa-brands fa-facebook-f fa-lg"></i></a>
-              <a href="https://www.linkedin.com/in/dana-maulana-85b6871b0/" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-200 dark:border-slate-800 hover:border-[#0A66C2] hover:bg-[#0A66C2] text-slate-200 dark:text-slate-800 dark:hover:text-white dark:hover:border-none"><i class="fa-brands fa-linkedin fa-lg"></i></a>
-              <a href="https://github.com/DanaMaulana" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-200 dark:border-slate-800 hover:border-[#181717] hover:bg-[#181717] text-slate-200 dark:text-slate-800 dark:hover:text-white dark:hover:border-none"><i class="fa-brands fa-github fa-lg"></i></a>
-            </div>
-          </div>
+          </form>
         </div>
-        <div class="w-full px-4 mb-12 md:w-1/3">
-          <h4 class="font-semibold text-xl text-white mb-5 capitalize dark:text-dark">article category</h4>
-          <ul class="text-slate-300">
-            <p class="text-base text-secondary">Belum ada tautan apapun</p>
-            <!-- <li><a href="#" class="inline-block text-base hover:text-primary mb-3 dark:text-slate-700">programming</a></li>
+      </section>
+      <!-- contact section end -->
+    </main>
+    <!-- main end -->
+
+    <!-- footer start -->
+    <footer class="bg-dark pt-24 pb-12 dark:bg-slate-200">
+      <div class="container">
+        <div class="flex flex-wrap">
+          <div class="w-full px-4 mb-12 text-slate-300 font-medium md:w-1/3">
+            <h3
+              class="font-bold text-4xl text-white mb-5 uppercase dark:text-dark"
+            >
+              monday tech
+            </h3>
+            <h4 class="font-bold text-2xl mb-2 capitalize dark:text-dark">
+              hubungi kami
+            </h4>
+            <div class="w-full border-slate-700 dark:border-slate-500">
+              <div class="flex items-center mb-5">
+                <a
+                  href="https://www.instagram.com/_danam3/"
+                  target="_blank"
+                  class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-200 dark:border-slate-800 hover:border-[#E4405F] hover:bg-[#E4405F] text-slate-200 dark:text-slate-800 dark:hover:text-white dark:hover:border-none"
+                  ><i class="fa-brands fa-instagram fa-lg"></i
+                ></a>
+                <a
+                  href="https://twitter.com/DanaMaulanaDev"
+                  target="_blank"
+                  class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-200 dark:border-slate-800 hover:border-[#000000] hover:bg-[#000000] text-slate-200 dark:text-slate-800 dark:hover:text-white dark:hover:border-none"
+                  ><i class="fa-brands fa-x-twitter fa-lg"></i
+                ></a>
+                <a
+                  href="https://web.facebook.com/dana.maulana.794/"
+                  target="_blank"
+                  class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-200 dark:border-slate-800 hover:border-[#0866FF] hover:bg-[#0866FF] text-slate-200 dark:text-slate-800 dark:hover:text-white dark:hover:border-none"
+                  ><i class="fa-brands fa-facebook-f fa-lg"></i
+                ></a>
+                <a
+                  href="https://www.linkedin.com/in/dana-maulana-85b6871b0/"
+                  target="_blank"
+                  class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-200 dark:border-slate-800 hover:border-[#0A66C2] hover:bg-[#0A66C2] text-slate-200 dark:text-slate-800 dark:hover:text-white dark:hover:border-none"
+                  ><i class="fa-brands fa-linkedin fa-lg"></i
+                ></a>
+                <a
+                  href="https://github.com/DanaMaulana"
+                  target="_blank"
+                  class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-200 dark:border-slate-800 hover:border-[#181717] hover:bg-[#181717] text-slate-200 dark:text-slate-800 dark:hover:text-white dark:hover:border-none"
+                  ><i class="fa-brands fa-github fa-lg"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="w-full px-4 mb-12 md:w-1/3">
+            <h4
+              class="font-semibold text-xl text-white mb-5 capitalize dark:text-dark"
+            >
+              article category
+            </h4>
+            <ul class="text-slate-300">
+              <p class="text-base text-secondary">Belum ada tautan apapun</p>
+              <!-- <li><a href="#" class="inline-block text-base hover:text-primary mb-3 dark:text-slate-700">programming</a></li>
             <li><a href="#" class="inline-block text-base hover:text-primary mb-3 dark:text-slate-700">teknologi</a></li>
             <li><a href="#" class="inline-block text-base hover:text-primary mb-3 dark:text-slate-700">gaya hidup</a></li> -->
-          </ul>
+            </ul>
+          </div>
+          <div class="w-full px-4 mb-12 md:w-1/3">
+            <h4
+              class="font-semibold text-xl text-white mb-5 capitalize dark:text-dark"
+            >
+              link
+            </h4>
+            <ul class="text-slate-300">
+              <li>
+                <a
+                  href="#home"
+                  class="inline-block text-base hover:text-primary mb-3 dark:text-slate-700 dark:hover:text-primary"
+                  >home page</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="inline-block text-base hover:text-primary mb-3 dark:text-slate-700 dark:hover:text-primary"
+                  >about me</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#portfolio"
+                  class="inline-block text-base hover:text-primary mb-3 dark:text-slate-700 dark:hover:text-primary"
+                  >portfolio</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#skills"
+                  class="inline-block text-base hover:text-primary mb-3 dark:text-slate-700 dark:hover:text-primary"
+                  >skills</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#blog"
+                  class="inline-block text-base hover:text-primary mb-3 dark:text-slate-700 dark:hover:text-primary"
+                  >blog</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="inline-block text-base hover:text-primary mb-3 dark:text-slate-700 dark:hover:text-primary"
+                  >contact</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="w-full px-4 mb-12 md:w-1/3">
-          <h4 class="font-semibold text-xl text-white mb-5 capitalize dark:text-dark">link</h4>
-          <ul class="text-slate-300">
-            <li><a href="#home" class="inline-block text-base hover:text-primary mb-3 dark:text-slate-700 dark:hover:text-primary">home page</a></li>
-            <li><a href="#about" class="inline-block text-base hover:text-primary mb-3 dark:text-slate-700 dark:hover:text-primary">about me</a></li>
-            <li><a href="#portfolio" class="inline-block text-base hover:text-primary mb-3 dark:text-slate-700 dark:hover:text-primary">portfolio</a></li>
-            <li><a href="#skills" class="inline-block text-base hover:text-primary mb-3 dark:text-slate-700 dark:hover:text-primary">skills</a></li>
-            <li><a href="#blog" class="inline-block text-base hover:text-primary mb-3 dark:text-slate-700 dark:hover:text-primary">blog</a></li>
-            <li><a href="#contact" class="inline-block text-base hover:text-primary mb-3 dark:text-slate-700 dark:hover:text-primary">contact</a></li>
-          </ul>
+        <div
+          class="w-full pt-10 border-t border-slate-700 dark:border-slate-500"
+        >
+          <p
+            class="font-medium text-slate-500 text-center text-xs dark:text-dark"
+          >
+            CopyRight&copy; 2024
+            <a
+              href="https://www.linkedin.com/in/dana-maulana-85b6871b0/"
+              class="text-base font-bold text-primary"
+              >Dana Maulana.</a
+            >
+            All right reserved.
+          </p>
         </div>
       </div>
-      <div class="w-full pt-10 border-t border-slate-700 dark:border-slate-500">
-        <p class="font-medium text-slate-500 text-center text-xs dark:text-dark">CopyRight&copy; 2024 <a href="https://www.linkedin.com/in/dana-maulana-85b6871b0/" class="text-base font-bold text-primary">Dana Maulana.</a> All right reserved.</p>
-      </div>
-    </div>
-  </footer>
-  <!-- footer end -->
+    </footer>
+    <!-- footer end -->
 
-  <!-- back to top start -->
-  <a href="#home" class="fixed hidden justify-center items-center h-14 w-14 bottom-4 right-4 z-50 bg-primary rounded-full p-4 hover:animate-pulse" id="to-top">
-    <span class="block h-5 w-5 border-t-2 border-l-2 rotate-45 mt-2"></span>
-  </a>
-  <!-- back to top end -->
+    <!-- back to top start -->
+    <a
+      href="#home"
+      class="fixed hidden justify-center items-center h-14 w-14 bottom-4 right-4 z-50 bg-primary rounded-full p-4 hover:animate-pulse"
+      id="to-top"
+    >
+      <span class="block h-5 w-5 border-t-2 border-l-2 rotate-45 mt-2"></span>
+    </a>
+    <!-- back to top end -->
 
-  <script src="src/js/script.js"></script>
-</body>
+    <script src="src/js/script.js"></script>
+  </body>
 </html>
